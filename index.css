@@ -1,0 +1,387 @@
+body {
+    margin: 0;
+    padding-top: 0px;
+    background-color: #f5f3e7;
+    font-family: Bahnschrift;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    z-index: 200;
+}
+
+.logo-section {
+    flex: 1;
+    max-width: 150px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo-image {
+    max-width: 150px;
+}
+
+.legacyText {
+    font-size: 33.5px;
+    font-weight: 100;
+}
+
+.title-section {
+    font-size: 40px;
+    padding-top: 2%;
+    color: #2f4f4f;
+}
+
+.stamp-section {
+    flex: 1;
+    max-width: 75px;
+    display: flex;
+    padding-top: 1%;
+}
+
+.stamp-image {
+    width: 75px;
+}
+
+.download-section {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+
+    justify-content: space-evenly;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    z-index: 200;
+}
+
+.preview-section {
+    flex: 1;
+    max-width: 467px;
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    background-color: #2f4f4f;
+    position: relative;
+    display: inline-block;
+}
+
+.preview-image {
+    width: 450px;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.preview-image:hover {
+  opacity: 0.5;
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f5f3e7;
+  font-size: 2.5rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.preview-image:hover .hover-text {
+  opacity: 1;
+}
+
+.text-section {
+    flex: 1;
+    max-width: 468px;
+    display: flex;
+    padding-top: 1%;
+    padding-left: 0.8%;
+    padding-bottom: 0.8%;
+    background-color: #6c9a8b;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.text-title-section {
+    padding-bottom: 50px;
+}
+
+.text-title {
+    font-size: 40px;
+    color: #f5f3e7;
+}
+
+.text-description-section {
+    padding-bottom: 50px;
+}
+
+.text-description {
+    font-size: 24.72px;
+    color: #f5f3e7;
+}
+
+
+.preview-button {
+    padding: 10px 20px;
+    font-size: 24.72px;
+    background-color: #f5f3e7;
+    color: #2f4f4f;
+    border: none;
+    border-radius: 5px;
+    transition: scale 0.7s ease;
+}
+
+.preview-button:hover {
+    cursor: pointer;
+    background-color: #2f4f4f;
+    color: #f5f3e7;
+    scale: 1.1;
+}
+
+@media (max-width: 940px) {
+
+    .logo-section, .logo-image {
+        width: 100px;
+    }
+
+  .legacyText {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .title-section {
+    font-size: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .stamp-section, .stamp-image {
+    width: 50px;
+  }
+
+  .download-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .preview-section,
+  .text-section {
+    max-width: 90%;
+    width: 100%;
+    padding: 5% 2%;
+  }
+
+  .preview-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .text-title {
+    font-size: 1.8rem;
+  }
+
+  .text-description {
+    font-size: 1rem;
+  }
+
+  .preview-button {
+    font-size: 1rem;
+    padding: 12px 24px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 860px) {
+  .title-section {
+    font-size: 1.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .title-section {
+    font-size: 1.6rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 555px) {
+ .logo-section, .logo-image {
+        width: 80px;
+    }
+
+  .legacyText {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .title-section {
+    font-size: 1.4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding-left: 5px;
+  }
+
+  .stamp-section, .stamp-image {
+    width: 40px;
+  }
+}
+
+@media (max-width: 508px) {
+ .logo-section, .logo-image {
+        width: 65px;
+    }
+
+  .legacyText {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .title-section {
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding-left: 5px;
+  }
+
+  .stamp-section, .stamp-image {
+    width: 40px;
+  }
+}
+
+@media (max-width: 384px) {
+ .logo-section, .logo-image {
+        width: 50px;
+    }
+
+  .legacyText {
+    font-size: 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding: 3px;
+  }
+
+  .title-section {
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding-top: 5px;
+  }
+
+  .stamp-section, .stamp-image {
+    width: 30px;
+  }
+
+  .hover-text {
+      font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 317px) {
+ .logo-section, .logo-image {
+        width: 40px;
+    }
+
+  .legacyText {
+    font-size: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding: 3px;
+  }
+
+  .title-section {
+    font-size: 0.7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding-top: 5px;
+  }
+
+  .stamp-section, .stamp-image {
+    width: 30px;
+  }
+}
+
+@media (max-width: 253px) {
+ .logo-section, .logo-image {
+        width: 30px;
+    }
+
+  .legacyText {
+    font-size: 7px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding: 0;
+  }
+
+  .title-section {
+    font-size: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding-top: 3px;
+  }
+
+  .stamp-section, .stamp-image {
+    width: 25px;
+  }
+
+  .hover-text {
+      font-size: 1rem;
+  }
+}
