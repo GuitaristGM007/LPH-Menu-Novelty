@@ -2,79 +2,135 @@
 <html>
 
 <head>
+
     <meta charset="utf-8"/>
-    <link rel="icon" type="image/x-icon" href="Stencil Logo copy.png">
+    <link rel="shortcut icon" type="image/x-icon" href="Stencil Logo copy.png">
     <title>LPH Goes Green! View The Menu Novelty</title>
     <link rel = "stylesheet" type = "text/css" href = "index.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="LPH Goes Green! The Menu Novelty holds all the 'homemade' paranthas, veggies, drinks, pasta, noodles, rice, sandwiches, etc. to
+    provide you with a wholesome meal!">
+    <meta name="author" content="LPH Team">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1R484STBLL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1R484STBLL');
+    </script>
+
 </head>
 
 <body>
 
 <div class="header">
+    <div class="logo-section">
+        <div class="logo">
+            <a rel="htmlpage" href="index.html">
+                <img alt="logo" class="logo-image" src="Green LPH Logo.png">
+            </a>
+        </div>
+        <div class="legacyText">
+            Since 2011
+        </div>
+    </div>
 
-<div class="logo-section">
-    <div class="logo">
-        <a rel="htmlpage" href="index.html">
-            <img alt="logo" class="logo-image" src="Green LPH Logo.png">
-        </a>
-     </div>
-     <div class="legacyText">
-        Since 2011
-     </div>
-</div>
+    <div class="title-section">
+        Welcome to The Menu Novelty!
+    </div>
 
-<div class="title-section">
-    Welcome to The Menu Novelty!
-</div>
-
-<div class="stamp-section">
-    <div class="stamp">
-        <img alt="stamp" class="stamp-image" src="LPH Stamp.png">
+    <div class="stamp-section">
+        <div class="stamp">
+            <img alt="stamp" class="stamp-image" src="LPH Stamp.png">
+        </div>
     </div>
 </div>
 
-</div>
+<main class="download-section">
 
-<div class="download-section">
-
-<div class="preview-section">
-    <div class="preview-image">
-        <a href="LPH Goes Green! The Menu Novelty - Pastas & Noodles.pdf" download>
-            <img class="preview-image" src="Page 1 Pasta & Noodles.png" alt="Menu Preview" loading="lazy">
-            <div class="hover-text">Download</div>
-        </a>
+    <div class="preview-section">
+        <div class="preview-image">
+            <a href="LPH Goes Green! The Menu Novelty - Pastas & Noodles.pdf" download>
+                <img id="download-menu-image" class="preview-image" src="Page 1 Pasta & Noodles.png" alt="Menu Preview" loading="lazy">
+                <div class="hover-text">Download</div>
+            </a>
+        </div>
     </div>
-</div>
 
-<div class="text-section">
+    <div class="text-section">
+        <div class="text-title-section">
+            <div class="text-title">
+                LPH Goes Green!
+            </div>
+        </div>
 
-<div class="text-title-section">
-<div class="text-title">
-    LPH Goes Green!
-</div>
-</div>
+        <div class="text-description-section">
+            <div class="text-description">
+                The Menu Novelty holds all the 'homemade' paranthas, veggies, drinks, pasta, noodles, rice, sandwiches, etc. to
+                provide you with a wholesome meal!
+            </div>
+        </div>
 
-<div class="text-description-section">
-<div class="text-description">
-    The Menu Novelty holds all the 'homemade' paranthas, veggies, drinks, pasta, noodles, rice, sandwiches, etc. to
-    provide you with a wholesome meal!
-</div>
-</div>
+        <div class="download-button">
+            <a href="LPH Goes Green! The Menu Novelty - Pastas & Noodles.pdf" download>
+                <button id="download-menu-button" class="preview-button">
+                    Download The Menu
+                </button>
+            </a>
+        </div>
 
-<div class="download-button">
-    <a href="LPH Goes Green! The Menu Novelty - Pastas & Noodles.pdf" download>
-        <button class="preview-button">
-            Download The Menu
-        </button>
-    </a>
-</div>
+    </div>
 
-</div>
+</main>
 
-</div>
+
+<!-- Firebase App (core) -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<!-- Firebase Analytics -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyAvWlnAUx3hFEkksLzvTTnUWsn90OVPqFI",
+        authDomain: "lph-server-website.firebaseapp.com",
+        databaseURL: "https://lph-server-website-default-rtdb.firebaseio.com",
+        projectId: "lph-server-website",
+        storageBucket: "lph-server-website.firebasestorage.app",
+        messagingSenderId: "200401032111",
+        appId: "1:200401032111:web:4f1ab841512d1fe157955a",
+        measurementId: "G-1R484STBLL"
+    };
+        const app = firebase.initializeApp(firebaseConfig);
+        const analytics = firebase.analytics();
+        analytics.logEvent('page_view');
+</script>
+
+<script>
+    document.getElementById('download-menu-button').addEventListener('click', (e) => {
+        gtag('event', 'menu_download-button', {
+            item_name: 'LPH Menu Novelty PDF',
+            method: 'button_click'
+        });
+        setTimeout(() => {
+            window.location.href = "LPH Goes Green! The Menu Novelty - Pastas & Noodles.pdf";
+        }, 300); // 300ms delay
+    });
+</script>
+
+<script>
+    document.getElementById('download-menu-image').addEventListener('click', (e) => {
+        gtag('event', 'menu_download_image', {
+            item_name: 'LPH Menu Novelty PDF',
+            method: 'image_click'
+        });
+        setTimeout(() => {
+            window.location.href = "LPH Goes Green! The Menu Novelty - Pastas & Noodles.pdf";
+        }, 300);
+    });
+</script>
 
 </body>
-
 
 </html>
