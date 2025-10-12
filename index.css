@@ -38,9 +38,8 @@ body {
 .legacyText {
   font-size: 33.5px;
   font-weight: 300;
-  font-family: 'Bahnschrift', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', monospace;
   letter-spacing: 0.5px;
-  font-feature-settings: 'tnum';
 }
 
 .title-section {
@@ -398,5 +397,6 @@ body {
       font-size: 1rem;
   }
 }
+
 
 
