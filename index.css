@@ -1,14 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+    overflow-x: hidden;
     margin: 0;
     padding-top: 0px;
     background-color: #f5f3e7;
-    font-family: Bahnschrift;
+    font-family: Bahnschrift, Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .header {
     display: flex;
     flex-direction: row;
-    flex: 1;
 
     justify-content: space-between;
     top: 0;
@@ -19,7 +25,6 @@ body {
 }
 
 .logo-section {
-    flex: 1;
     max-width: 150px;
     display: flex;
     flex-direction: column;
@@ -42,7 +47,6 @@ body {
 }
 
 .stamp-section {
-    flex: 1;
     max-width: 75px;
     display: flex;
     padding-top: 1%;
@@ -55,29 +59,31 @@ body {
 .download-section {
     display: flex;
     flex-direction: row;
-    flex: 1;
 
     justify-content: space-evenly;
     top: 0;
     left: 0;
     right: 0;
+
+    max-width: 1200px;
+    margin: 0 auto;
     
     z-index: 200;
 }
 
 .preview-section {
-    flex: 1;
-    max-width: 467px;
-    padding-top: 1%;
-    padding-left: 1%;
-    padding-bottom: 1%;
-    background-color: #2f4f4f;
-    position: relative;
-    display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1%;
+  background-color: #2f4f4f;
+  position: relative;
 }
 
 .preview-image {
     width: 450px;
+    margin: 0 auto;
     cursor: pointer;
     transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -146,14 +152,18 @@ body {
     color: #2f4f4f;
     border: none;
     border-radius: 5px;
-    transition: scale 0.7s ease;
+    transition: transform 0.7s ease;
 }
 
 .preview-button:hover {
     cursor: pointer;
     background-color: #2f4f4f;
     color: #f5f3e7;
-    scale: 1.1;
+    transform: scale(1.1);
+}
+
+.preview-button:focus {
+  outline: 2px solid #6c9a8b;
 }
 
 @media (max-width: 940px) {
