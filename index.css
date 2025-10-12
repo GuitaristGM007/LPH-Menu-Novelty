@@ -37,7 +37,8 @@ body {
 
 .legacyText {
     font-size: 33.5px;
-    font-weight: 100;
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 
 .title-section {
@@ -395,3 +396,4 @@ body {
       font-size: 1rem;
   }
 }
+
