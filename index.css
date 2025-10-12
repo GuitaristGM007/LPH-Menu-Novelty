@@ -99,6 +99,9 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+.preview-image img {
+  pointer-events: none; /* disables click on image itself */
+}
 
 .hover-text {
   position: absolute;
@@ -385,4 +388,5 @@ body {
       font-size: 1rem;
   }
 }
+
 
