@@ -2,31 +2,17 @@
 <html>
 
 <head>
-
     <meta charset="utf-8"/>
     <link rel="shortcut icon" type="image/x-icon" href="Stencil Logo copy.png">
     <title>LPH Goes Green! View The Menu Novelty</title>
     <link rel = "stylesheet" type = "text/css" href = "index.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="LPH Goes Green! The Menu Novelty holds all the 'homemade' paranthas, veggies, drinks, pasta, noodles, rice, sandwiches, etc. to
-    provide you with a wholesome meal!">
-    <meta name="author" content="LPH Team">
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1R484STBLL"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-1R484STBLL');
-    </script>
-
 </head>
 
 <body>
 
 <div class="header">
+
     <div class="logo-section">
         <div class="logo">
             <a rel="htmlpage" href="index.html">
@@ -47,6 +33,7 @@
             <img alt="stamp" class="stamp-image" src="LPH Stamp.png">
         </div>
     </div>
+
 </div>
 
 <main class="download-section">
@@ -54,13 +41,14 @@
     <div class="preview-section">
         <div class="preview-image">
             <a href="LPH Goes Green! The Menu Novelty - Pastas & Noodles.pdf" download>
-                <img id="download-menu-image" class="preview-image" src="Page 1 Pasta & Noodles.png" alt="Menu Preview" loading="lazy">
+                <img id="menu-download-image" class="preview-image" src="Page 1 Pasta & Noodles.png" alt="Menu Preview">
                 <div class="hover-text">Download</div>
             </a>
         </div>
     </div>
 
     <div class="text-section">
+
         <div class="text-title-section">
             <div class="text-title">
                 LPH Goes Green!
@@ -76,7 +64,7 @@
 
         <div class="download-button">
             <a href="LPH Goes Green! The Menu Novelty - Pastas & Noodles.pdf" download>
-                <button id="download-menu-button" class="preview-button">
+                <button id="menu-download-button" class="preview-button">
                     Download The Menu
                 </button>
             </a>
@@ -86,49 +74,52 @@
 
 </main>
 
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+  import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js";
+  import { getDatabase, ref, runTransaction, set } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-database.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-<!-- Firebase App (core) -->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<!-- Firebase Analytics -->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
-<script>
-    const firebaseConfig = {
-        apiKey: "AIzaSyAvWlnAUx3hFEkksLzvTTnUWsn90OVPqFI",
-        authDomain: "lph-server-website.firebaseapp.com",
-        databaseURL: "https://lph-server-website-default-rtdb.firebaseio.com",
-        projectId: "lph-server-website",
-        storageBucket: "lph-server-website.firebasestorage.app",
-        messagingSenderId: "200401032111",
-        appId: "1:200401032111:web:4f1ab841512d1fe157955a",
-        measurementId: "G-1R484STBLL"
-    };
-        const app = firebase.initializeApp(firebaseConfig);
-        const analytics = firebase.analytics();
-        analytics.logEvent('page_view');
-</script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAvWlnAUx3hFEkksLzvTTnUWsn90OVPqFI",
+    authDomain: "lph-server-website.firebaseapp.com",
+    databaseURL: "https://lph-server-website-default-rtdb.firebaseio.com",
+    projectId: "lph-server-website",
+    storageBucket: "lph-server-website.firebasestorage.app",
+    messagingSenderId: "200401032111",
+    appId: "1:200401032111:web:d0ccd06a0415e97657955a",
+    measurementId: "G-9B9SR4TZVY"
+  };
 
-<script>
-    document.getElementById('download-menu-button').addEventListener('click', (e) => {
-        gtag('event', 'menu_download-button', {
-            item_name: 'LPH Menu Novelty PDF',
-            method: 'button_click'
-        });
-        setTimeout(() => {
-            window.location.href = "LPH Goes Green! The Menu Novelty - Pastas & Noodles.pdf";
-        }, 300); // 300ms delay
-    });
-</script>
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getDatabase(app);
 
-<script>
-    document.getElementById('download-menu-image').addEventListener('click', (e) => {
-        gtag('event', 'menu_download_image', {
-            item_name: 'LPH Menu Novelty PDF',
-            method: 'image_click'
-        });
-        setTimeout(() => {
-            window.location.href = "LPH Goes Green! The Menu Novelty - Pastas & Noodles.pdf";
-        }, 300);
-    });
+  logEvent(analytics, "site_visit", { source: "menu_page" });
+
+  window.addEventListener("DOMContentLoaded", () => {
+  runTransaction(ref(db, "stats/total_visits"), n => (n || 0) + 1);
+});
+
+  document.getElementById("menu-download-image").addEventListener("click", () => {
+  logEvent(analytics, "image_download", { method: "image" });
+
+    runTransaction(ref(db, "stats/image_downloads"), n => (n || 0) + 1);
+    runTransaction(ref(db, "stats/total_clicks"), n => (n || 0) + 1);
+  });
+
+  document.getElementById("menu-download-button").addEventListener("click", () => {
+  logEvent(analytics, "button_download", { method: "button" });
+
+  runTransaction(ref(db, "stats/button_downloads"), n => (n || 0) + 1);
+  runTransaction(ref(db, "stats/total_clicks"), n => (n || 0) + 1);
+});
+
 </script>
 
 </body>
