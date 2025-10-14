@@ -174,9 +174,6 @@ body {
 
   .legacyText {
     font-size: 20px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     text-align: center;
     padding: 10px;
   }
@@ -255,9 +252,6 @@ body {
 
   .legacyText {
     font-size: 16px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     text-align: center;
     padding: 5px;
   }
@@ -283,9 +277,6 @@ body {
 
   .legacyText {
     font-size: 12px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     text-align: center;
     padding: 5px;
   }
@@ -311,9 +302,6 @@ body {
 
   .legacyText {
     font-size: 9px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     text-align: center;
     padding: 3px;
   }
@@ -343,9 +331,6 @@ body {
 
   .legacyText {
     font-size: 8px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     text-align: center;
     padding: 3px;
   }
@@ -371,9 +356,6 @@ body {
 
   .legacyText {
     font-size: 7px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     text-align: center;
     padding: 0;
   }
