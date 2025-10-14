@@ -37,12 +37,7 @@ body {
 
 .legacyText {
     font-size: 33.5px;
-    font-weight: 300;
-    white-space: nowrap;
-    overflow: visible;
-    text-overflow: unset;
-    display: inline-block;
-    max-width: 100%;
+    font-weight: 100;
 }
 
 .title-section {
@@ -179,6 +174,9 @@ body {
 
   .legacyText {
     font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-align: center;
     padding: 10px;
   }
@@ -257,6 +255,9 @@ body {
 
   .legacyText {
     font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-align: center;
     padding: 5px;
   }
@@ -282,6 +283,9 @@ body {
 
   .legacyText {
     font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-align: center;
     padding: 5px;
   }
@@ -307,6 +311,9 @@ body {
 
   .legacyText {
     font-size: 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-align: center;
     padding: 3px;
   }
@@ -336,6 +343,9 @@ body {
 
   .legacyText {
     font-size: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-align: center;
     padding: 3px;
   }
@@ -361,6 +371,9 @@ body {
 
   .legacyText {
     font-size: 7px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-align: center;
     padding: 0;
   }
